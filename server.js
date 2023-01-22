@@ -10,6 +10,7 @@ const port = process.env.PORT;
 const userRouter = require('./server/api/users/user.router');
 
 app.use(cors());
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

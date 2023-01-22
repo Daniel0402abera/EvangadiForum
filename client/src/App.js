@@ -2,10 +2,15 @@ import axios from 'axios';
 import { useContext, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
+import './Pages/Footer/Footer.css'
 import { UserContext } from './context/UserContext';
+import Footer from './Pages/Footer/Footer';
 import Home from './Pages/Home/Home';
+import Header from './Pages/Landing_page/Header';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
+import Askquestion from './Pages/Question/Askquestion';
+import Test from './Pages/Question/Test';
 function App() {
   const [userData, setUserData] = useContext(UserContext);
 
@@ -53,17 +58,22 @@ function App() {
     checkLoggedIn();
   }, []);
   return (
-    <Router>
-      <div>
+    <>
+      <Router>
+        <Header />
         <Routes>
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home logout={logout} />} />
+          <Route path="/ask" element={<Test />} />
 
           {/* passing logout function as props to Home page */}
-          <Route path="/" element={<Home logout={logout} />} />
+          {/* <Route path="/" element={<Home logout={logout} />} /> */}
         </Routes>
-      </div>
-    </Router>
+        {/* <Test /> */}
+        <Footer />
+      </Router>
+    </>
   );
 }
 
