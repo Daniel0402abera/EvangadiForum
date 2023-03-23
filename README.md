@@ -1,2 +1,2 @@
 # EvangadiForum
-#This project is by React and MongoDB
+#This project is by React and MYSQL
