@@ -1,0 +1,73 @@
+.signup_wrapper {
+  display: flex;
+  justify-content: center;
+  height: 85vh;
+  background-image: url("../../images//evangadi_bg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.signupClass {
+  padding-top: 100px;
+  width: 50%;
+  margin-top: 100px;
+  margin-left: 300px;
+  margin-bottom: 100px;
+  background-color: white;
+  z-index: 10;
+
+  border: 1px solid;
+
+  box-shadow: 5px 10px 18px white;
+
+  text-align: center;
+}
+
+.email_field,
+.user_field,
+.pass_field {
+  width: 80%;
+  margin-left: 50px;
+  margin-right: 50px !important;
+  margin-top: 30px;
+}
+
+.f_name,
+.l_name {
+  width: 40%;
+  margin-top: 30px;
+}
+.f_name {
+  margin-left: 70px !important;
+}
+
+.l_name {
+  margin-right: 70px !important;
+}
+.name_field {
+  display: flex;
+  justify-content: space-around;
+}
+
+div .name_field {
+  border: none;
+  border-width: 0;
+  border: 0;
+}
+
+.aboutClass {
+  padding-top: 100px;
+  width: 50%;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.signup_btn,
+.howitworks-btn {
+  padding: 14px 16px;
+
+  color: #000;
+  background-color: orange;
+  opacity: 1;
+}

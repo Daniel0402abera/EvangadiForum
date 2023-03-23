@@ -1,0 +1,25 @@
+.question_class{
+    padding-top: 100px;
+        width: 50%;
+        height: 100vh;
+        margin-top: 100px;
+        margin-left: 300px;
+        margin-bottom: 100px;
+        background-color: white;
+        z-index: 1;
+        box-shadow: inset 0 0 5px 2px;
+        /* mark the inset */
+        text-align: center;
+}
+
+.post_question_btn{
+    background-color: blue;
+    height: 50px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    margin-left: 350px;
+    margin-right: 350px;
+    color:white;
+
+}

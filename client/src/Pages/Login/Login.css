@@ -1,0 +1,56 @@
+.all-wrapper {
+  background-image: url("../../images//evangadi_bg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh;
+}
+
+.loginClass {
+  background-color: white;
+  border: 1px solid;
+  box-shadow: 5px 10px 18px white;
+  text-align: center;
+  border-radius: 10px;
+  height: 55vh;
+  margin-top: 100px !important;
+  padding-top: 100px !important;
+  margin-left: 100px !important;
+  
+}
+.email-field,.pass-field{
+  height: 5vh;
+  margin-bottom: 30px !important;
+  width: 100%;
+}
+
+
+
+
+
+.login_btn,
+.howto_btn {
+
+  color:white !important;
+  background-color: blue !important;
+  padding: 10px 80px !important;
+  border-radius: 10px !important;;
+  
+}
+
+.login_btn:hover,
+.howto_btn:hover{
+  background-color: orange !important;
+  color: white !important;
+
+}
+
+
+.aboutClass{
+  height: 55vh;
+  margin-top: 100px !important;;
+}
+
+.howto_btn{
+  margin-top: 100px !important;
+}
