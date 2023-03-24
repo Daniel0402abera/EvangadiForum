@@ -12,6 +12,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Link from "@mui/material/Link";
+import logo from '../../images/evangadi_logo.png'
 
 
 const navigationLinks = [
@@ -27,13 +28,10 @@ const useStyles = makeStyles((theme) => ({
   },
   img: {
     marginRight: "auto",
-    color: "white",
-    backgroundColor: "red",
-    borderRadius: 0,
-    height: 30,
-    border: "2px solid gray",
-    borderLeft: "12px solid transparent",
-    borderRight: "12px solid transparent",
+    
+    backgroundColor: "white",
+    height: '5vh',
+    
   },
 }));
 
@@ -41,10 +39,10 @@ export default function Header() {
   const styles = useStyles();
   const [open, setOpen] = useState(false);
   return (
-    <AppBar position="sticky" color="default">
+    <AppBar style={{height:'10vh', margin:'auto'}} position="sticky" color="default">
       <Container maxWidth="md">
         <Toolbar disableGutters>
-          <img className={styles.img}  alt='logo'></img>
+          <img className={styles.img} src={logo}  alt='logo'></img>
           
           <Hidden smDown>
             {navigationLinks.map((item) => (
