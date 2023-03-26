@@ -1,13 +1,13 @@
 import React from "react";
 import { Container } from "@mui/system";
-import { Button, Typography } from "@mui/material";
+import { Avatar, Button, Typography } from "@mui/material";
 
 function Home() {
   const home = {
     height: "73vh",
   };
   return (
-    <div>
+    
       <Container style={home}>
         <div
           style={{
@@ -22,12 +22,60 @@ function Home() {
           <Typography>Welcome Daniel Abera</Typography>
         </div>
 
-        <Typography style={{marginTop:'5vh'}}>
-            Question
-        </Typography>
+        <Typography style={{ marginTop: "5vh" }}>Question</Typography>
+        <hr />
+        <div style={{ display: "flex", height: "10vh" }}>
+          <div style={{ width: "10%" }}>
+            <Avatar />
+            <Typography>User Name</Typography>
+          </div>
+          <Typography style={{ paddingTop: "2%", width: "90%" }}>
+            lorem ipsum dolor sit amet, consectetur
+          </Typography>
+        </div>
+        <hr />
+        <div style={{ display: "flex", height: "10vh" }}>
+          <div style={{ width: "10%" }}>
+            <Avatar />
+            <Typography>User Name</Typography>
+          </div>
+          <Typography style={{ paddingTop: "2%", width: "90%" }}>
+            lorem ipsum dolor sit amet, consectetur
+          </Typography>
+        </div>
+        <hr/>
+        <div style={{ display: "flex", height: "10vh" }}>
+          <div style={{ width: "10%" }}>
+            <Avatar />
+            <Typography>User Name</Typography>
+          </div>
+          <Typography style={{ paddingTop: "2%", width: "90%" }}>
+            lorem ipsum dolor sit amet, consectetur
+          </Typography>
+        </div>
+
+        <hr/>
+        <div style={{ display: "flex", height: "10vh" }}>
+          <div style={{ width: "10%" }}>
+            <Avatar />
+            <Typography>User Name</Typography>
+          </div>
+          <Typography style={{ paddingTop: "2%", width: "90%" }}>
+            lorem ipsum dolor sit amet, consectetur
+          </Typography>
+        </div>
+        <hr/>
+        <div style={{ display: "flex", height: "10vh" }}>
+          <div style={{ width: "10%" }}>
+            <Avatar />
+            <Typography>User Name</Typography>
+          </div>
+          <Typography style={{ paddingTop: "2%", width: "90%" }}>
+            lorem ipsum dolor sit amet, consectetur
+          </Typography>
+        </div>
         <hr/>
       </Container>
-    </div>
   );
 }
 
