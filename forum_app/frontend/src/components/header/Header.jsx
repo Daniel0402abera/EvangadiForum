@@ -13,12 +13,13 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Link from "@mui/material/Link";
 import logo from '../../images/evangadi_logo.png'
+import { Button } from "@mui/material";
 
 
 const navigationLinks = [
   { name: "Home", href: "#" },
   { name: "How it works", href: "#" },
-  { name: "SIGN IN", href: "#" },
+  // { name: "SIGN IN", href: "#" },
 ];
 
 const useStyles = makeStyles((theme) => ({
@@ -57,6 +58,12 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
+             <Button 
+        type='submit'
+        variant='contained'
+         >
+          SIGN IN
+         </Button>
           </Hidden>
           
           <Hidden smUp>
