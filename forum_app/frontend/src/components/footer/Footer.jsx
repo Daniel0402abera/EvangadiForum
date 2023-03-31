@@ -5,7 +5,9 @@ function Footer() {
     const Container_style ={
          height:'17vh',
          backgroundColor:'black',
-         color:'white'
+         color:'white',
+         position: 'fixed',
+         bottom: 0
     }
   return (
     

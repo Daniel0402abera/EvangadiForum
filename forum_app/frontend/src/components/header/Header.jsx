@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import { makeStyles } from "@mui/styles";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -12,9 +13,10 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import Link from "@mui/material/Link";
-import logo from '../../images/evangadi_logo.png'
+import logo from "../../images/evangadi_logo.png";
 import { Button } from "@mui/material";
-
+import { useAuthContext } from "../../hooks/useAuthContext";
+import { useLogout } from "../../hooks/useLogout";
 
 const navigationLinks = [
   { name: "Home", href: "#" },
@@ -25,26 +27,36 @@ const navigationLinks = [
 const useStyles = makeStyles((theme) => ({
   link: {
     // marginRight: 20,
-    padding:20
+    padding: 20,
   },
   img: {
     marginRight: "auto",
-    
+
     backgroundColor: "white",
-    height: '5vh',
-    
+    height: "5vh",
   },
 }));
 
 export default function Header() {
+  const { logout } = useLogout();
+
+  const { user } = useAuthContext();
   const styles = useStyles();
   const [open, setOpen] = useState(false);
+
+  const handleLogout = (e) => {
+    logout();
+  };
   return (
-    <AppBar style={{height:'10vh', margin:'auto'}} position="sticky" color="default">
+    <AppBar
+      style={{ height: "10vh", margin: "auto" }}
+      position="sticky"
+      color="default"
+    >
       <Container maxWidth="md">
         <Toolbar disableGutters>
-          <img className={styles.img} src={logo}  alt='logo'></img>
-          
+          <img className={styles.img} src={logo} alt="logo"></img>
+
           <Hidden smDown>
             {navigationLinks.map((item) => (
               <Link
@@ -58,14 +70,17 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
-             <Button 
-        type='submit'
-        variant='contained'
-         >
-          SIGN IN
-         </Button>
+            {user ? (
+              <Button onClick={handleLogout} variant="contained">
+                Log Out
+              </Button>
+            ) : (
+              <Button type="submit" variant="contained">
+                SIGN IN
+              </Button>
+            )}
           </Hidden>
-          
+
           <Hidden smUp>
             <IconButton onClick={() => setOpen(true)}>
               <MenuIcon />

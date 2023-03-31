@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Grid, Paper, TextField, Typography } from "@mui/material";
 import { Container, maxWidth } from "@mui/system";
 import bgImg from '../../images/evangadi_bg.svg'
+import { Link } from "react-router-dom";
+import { useLogin } from "../../hooks/useLogin";
 
 function Login() {
+  const [data,setData] = useState({
+    email:'',
+    password:''
+  })
+
+  const {login, error, isLoading} = useLogin()
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    await login(data)
+  
+  }
+
+  console.log(data)
   const paperStyle = {
     padding: 20,
     height: "60vh",
@@ -51,6 +68,8 @@ function Login() {
                 placeholder="Your Email"
                 fullWidth
                 required
+                value={data.email}
+                onChange={(e)=>{setData({...data,email:e.target.value})}}
               />
 
               <TextField
@@ -60,6 +79,8 @@ function Login() {
                 type="password"
                 fullWidth
                 required
+                value={data.password}
+                onChange={(e)=>{setData({...data,password:e.target.value})}}
               />
 
               <Button
@@ -67,13 +88,17 @@ function Login() {
                 fullWidth
                 variant="contained"
                 style={login_btn}
+                onClick={handleSubmit}
+                disabled={isLoading}
               >
                 Submit
               </Button>
 
+              {error && <Typography>{error}</Typography>}
+
               <Grid align="center">
                 <p>Don't have account?</p>
-                <a href="#">Create new account</a>
+                <Link to='/signup'>Create new account</Link>
               </Grid>
             </Paper>
           </Grid>

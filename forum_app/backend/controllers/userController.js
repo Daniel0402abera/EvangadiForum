@@ -24,10 +24,10 @@ const loginUser = async (req, res) => {
 
 // signup a user
 const signupUser = async (req, res) => {
-  const {email, password} = req.body
+  const {email,firstName,lastName,userName,password} = req.body
 
   try {
-    const user = await User.signup(email, password)
+    const user = await User.signup(email,firstName,lastName,userName, password)
 
     // create a token
     const token = createToken(user._id)
@@ -38,4 +38,13 @@ const signupUser = async (req, res) => {
   }
 }
 
-module.exports = { signupUser, loginUser }
+
+const getUserbyId = (req,res)=>{
+  
+ const user_id = req.params.id
+
+ 
+
+}
+
+module.exports = { signupUser, loginUser,getUserbyId }

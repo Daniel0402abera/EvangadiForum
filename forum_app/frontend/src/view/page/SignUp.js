@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Grid, Paper, TextField, Typography } from "@mui/material";
 import { Container, maxWidth } from "@mui/system";
 import bgImg from "../../images/evangadi_bg.svg";
+import { Link } from "react-router-dom";
+import { useSignup } from "../../hooks/useSignup";
 
 function Login() {
+const [data,setData] = useState({
+  email:'',
+  firstName:'',
+  lastName:'',
+  userName:'',
+  password:''
+});
+
+const {signup, error, isLoading} = useSignup()
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    await signup(data)
+  }
+
+console.log(data)
   const paperStyle = {
     padding: 5,
     height: "70vh",
@@ -47,6 +66,9 @@ function Login() {
                 placeholder="Your Email"
                 fullWidth
                 required
+                type={"email"}
+                value={data.email}
+                onChange={(e)=>{setData({...data,email:e.target.value})}}
               />
 
               <TextField
@@ -55,6 +77,8 @@ function Login() {
                 placeholder="First Name"
                 margin={"normal"}
                 required
+                value={data.firstName}
+                onChange={(e)=>{setData({...data,firstName:e.target.value})}}
               />
               <TextField
                 style={{ width: "50%" }}
@@ -62,14 +86,18 @@ function Login() {
                 margin={"normal"}
                 placeholder="Last Name"
                 required
+                value={data.lastName}
+                onChange={(e)=>{setData({...data,lastName:e.target.value})}}
               />
               <TextField
                 style={input_field}
                 label="User"
                 placeholder="User Name"
-                type="password"
+                type=""
                 fullWidth
                 required
+                value={data.userName}
+                onChange={(e)=>{setData({...data,userName:e.target.value})}}
               />
 
               <TextField
@@ -79,6 +107,8 @@ function Login() {
                 type="password"
                 fullWidth
                 required
+                value={data.password}
+                onChange={(e)=>{setData({...data,password:e.target.value})}}
               />
 
               <Button
@@ -86,13 +116,16 @@ function Login() {
                 fullWidth
                 variant="contained"
                 style={login_btn}
+                onClick={handleSubmit}
+                disabled={isLoading}
               >
                 Agree and Join
               </Button>
+              {error && <Typography>{error}</Typography>}
 
               <Grid align="center">
                 <p>Already have account?</p>
-                <a href="#">Sign In</a>
+                <Link to='/'>Sign In</Link>
               </Grid>
             </Paper>
           </Grid>
